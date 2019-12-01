@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class NeighbourHood(models.Model):
+class NeighborHood(models.Model):
     name=models.CharField(max_length =40)
     location=models.CharField(max_length=40)
     occupants_count=models.PositiveIntegerField(blank=True,null=True)
