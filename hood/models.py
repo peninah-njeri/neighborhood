@@ -9,6 +9,9 @@ class NeighborHood(models.Model):
     occupants_count=models.PositiveIntegerField(blank=True,null=True)
 
 
+    def __str__(self):
+        return self.name
+
 
 class Userprofile(models.Model):
     user_name=models.OneToOneField(User,null = True,on_delete=models.CASCADE,related_name = "user")

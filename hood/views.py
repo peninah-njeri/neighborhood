@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def homepage(request):
-    return HttpResponse("pythonprogramming.net homepage! Wow so #amaze.")
+    businesses=Business.get_all_businesses()
+    neighborhoods=NeighborHood.get_all_neighborhoods()
+
+    return render(request=request,'homepage.html',{"businesses":businesses,"neighborhoods":neighborhoods,}
