@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NeighborHood,Userprofile,Business,Post,PoliceCentres,HealthCenter
+from .models import NeighborHood,Userprofile,Business,Post,PoliceCenters,HealthCenter
 
 # Register your models here.
 
@@ -10,5 +10,3 @@ admin.site.register(Post)
 
 admin.site.register(PoliceCenters)
 admin.site.register(HealthCenter)
-
-
