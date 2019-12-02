@@ -14,6 +14,14 @@ def homepage(request):
 
 
 
+def neighborhood(request,neighborhood_id):
+    neighborhood=NeighborHood.objects.get(id=neighborhood_id)
+
+    return render(request,'neighborhood.html',{"neighborhood":neighborhood})
+
+
+
+
 
 def business(request):
     current_user=request.user
@@ -28,6 +36,11 @@ def business(request):
     else:
         form=NewBusinessForm()
     return render(request,'business.html',{"form":form})
+
+def neighbourhood(request,neighborhood_id):
+    businesses=Business.objects.filter(neighborhood_id=neighborhood_id)
+
+    return render(request,'neighbourhood.html',{"businesses":businesses})    
 
 
 def post(request):

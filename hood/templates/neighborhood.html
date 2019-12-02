@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{% load bootstrap3 %}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+{% block content %}
+{{block.super}}
+<body style="background-color:#CACFD2">
+<div class="container">
+  <h1><strong>Name</strong>{{neighborhood.name}}</h1>
+
+
+<img src="{{neighborhood.neighborhood_image.url}}" class="img-responsive" alt="Image">
+
+<p><strong>Location</strong>{{neighborhood.location}}</p>
+<p><strong>Count</strong>{{neighborhood.occupants_count}}</p>
+</div>
+</body>
+
+{%endblock%}
