@@ -14,6 +14,13 @@ class NeighborHood(models.Model):
         return self.name
 
 
+    @classmethod
+    def get_all_neighborhoods(cls):
+        neighborhoods=cls.objects.all()
+        return neighborhoods
+
+
+
 class Userprofile(models.Model):
     profile_image=models.ImageField(upload_to='userprofiles',null=True)
     user_name=models.OneToOneField(User,null = True,on_delete=models.CASCADE,related_name = "user")
@@ -30,6 +37,12 @@ class Business(models.Model):
     email=models.EmailField(blank=True,null=True)    
 
 
+
+    @classmethod
+    def get_all_businesses(cls):
+        businesses=cls.objects.all()
+        return businesses
+
 class Post(models.Model):
     post_image=models.ImageField(upload_to='posts',null=True)
     owner=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
@@ -37,11 +50,18 @@ class Post(models.Model):
     neighborhood=models.ForeignKey(NeighborHood,on_delete=models.CASCADE,blank=True,null=True)
     post=models.TextField()
 
-def __str__(self):
+
+    def __str__(self):
         return self.title
+
+    @classmethod
+    def get_all_posts(cls):
+        posts=cls.objects.all()
+        return posts
+
+
+
    
-
-
 class HealthCenter(models.Model):
     name = models.CharField(max_length = 50)
     location=models.CharField(max_length =50)

@@ -1,0 +1,135 @@
+
+{%extends 'base.html'%}
+{% load staticfiles %}
+{% load static %}
+
+
+{% load bootstrap3 %}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="width:100%">
+{% block content %}
+{{block.super}}
+<div class="container">
+  <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12">
+
+
+  <body style="background-color:#D8DBDE">
+
+
+  <section>
+    <div class="row">
+
+      <h1 style="color: blue; letter-spacing: 5px; padding: 10px;" class="text-center">Latest posts</h1>
+      {% for post in posts %}
+
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
+
+
+
+      <p><b>Post Title:</b>{{post.title}}</p>
+      <p><b>By:</b>{{post.owner}}</p>
+        <img src="{{post.post_image.url}}" class="img-responsive" alt="Image">
+        <p>{{post.post}}</p>
+
+        <a  data-toggle="modal" data-target="#settings" aria-hidden="true"style="color:black;" ><button type="button" class="btn btn-info" name="button"> Comment</button></a>
+        <a href="{% url 'comments' %}" class="btn btn-info" role="button">View  Comments</a>
+
+      </div>
+      {% empty %}
+
+          <h2 class="text-center">No posts yet</h2>
+
+
+        {% endfor %}
+
+
+
+    </div>
+
+  </section>
+
+  <section>
+    <div class="row">
+      <h1 style="color: blue; letter-spacing: 5px; padding: 10px;"class="text-center">Businesses around</h1>
+
+      {% for business in businesses %}
+
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
+
+
+
+      <p><b>Name</b>{{business.business_name}}</p>
+        <img src="{{business.business_image.url}}" class="img-responsive" alt="Image">
+        <p><b>Neighbourhood</b>{{business.neighborhood}}</p>
+
+      </div>
+      {% empty %}
+
+          <h2 class="text-center">No Businesses yet</h2>
+
+
+        {% endfor %}
+
+
+
+    </div>
+
+  </section>
+
+  <section>
+    <div class="row">
+      <h1 style="color: blue; letter-spacing: 5px; padding: 10px;"class="text-center">Other Neighbourhoods</h1>
+      {% for neighborhood in neighborhoods %}
+
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
+
+
+
+      <p>{{neighborhood.title}}</p>
+
+        <img src="{{neighborhood.neighborhood_image.url}}" class="img-responsive" alt="Image">
+        <p>{{neighborhood.name}}</p>
+        <a href="{% url 'neighborhood' neighborhood.id %}" class="btn btn-info" role="button">View more details</a>
+
+      </div>
+      {% empty %}
+
+          <h2 class="text-center">No other neighborhoods</h2>
+
+
+        {% endfor %}
+
+
+
+    </div>
+
+  </section>
+
+</div>
+<div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-body">
+            <form  action="{%url 'index' %}" method="post" enctype="multipart/form-data">
+              {%csrf_token%}
+
+              {% bootstrap_form form %}
+              <input type="submit" class="btn btn-success btn-lg" value="Post">
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+  </div>
+{%endblock%}
+</body>
+</html>
