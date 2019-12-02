@@ -119,7 +119,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
           <div class="modal-body">
-            <form  action="{%url 'index' %}" method="post" enctype="multipart/form-data">
+            <form  action="{%url 'homepage' %}" method="post" enctype="multipart/form-data">
               {%csrf_token%}
 
               {% bootstrap_form form %}
