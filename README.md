@@ -1,16 +1,15 @@
 # Neighbourhood
->[Peninah Njeri](https://github.com/Brian23-eng)  
+>[Peninah Njeri](https://github.com/peninah-njeri)  
   
 # Description  
-This project allows users to post their hood, hospitals, police stations and businesses around their neighbourhood
+This project allows users to post their hood, posts, police stations and businesses around their neighbourhood
 ##  Live Link  
- Click [View Site](https://hoodart.herokuapp.com/)  to visit the site
+ Click [View Site](.....)  to visit the site
   
 ## User Story  
   
 * A user can view different neighbourhoods  
-* A user can post their neighbourhood 
-* A user can join or leave a different neighbourhood  
+* A user can post their neighbourhood   
 * Search for businesses  
 * A user can write a post for other users to see
 * A user can view their profile page. 
@@ -22,15 +21,15 @@ To get the project .......
   
 ##### Cloning the repository:  
 ```bash
-https://github.com/Brian23-eng/Neighbourhood.git
+https://github.com/peninah-njeri/neighborhood
 ```
 ##### Navigate into the folder and install requirements  
  ```bash
- cd Neighbourhood pip install -r requirements.txt 
+ cd Neighborhood pip install -r requirements.txt 
  ```
 ##### Install and activate Virtual  
 ```bash
-- python3 -m venv virtual - source virtual/bin/activate
+- python3 -m venv venv - source venv/bin/activate
 ```
 ##### Install Dependencies  
 ```bash
@@ -64,11 +63,11 @@ Open the application on your browser `127.0.0.1:8000`.
   
   
 ## Known Bugs  
-* There are no known bugs currently but pull requests are allowed incase you spot a bug  
+* There are no known bugs currently. 
   
 ## Contact Information   
-If you have any question or contributions, please email me at [b.odhiambo.bo@gmail.com]  
+If you have any queries or contributions, please email me at [peninahgathuru@gmail.com]  
   
 ## License 
-* [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)](https://github.com/brian23-eng/Picture-Globe/blob/master/LICENSE)  
-* Copyright (c) 2019 **BranTech**
+* [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)]
+* Copyright (c) 2019 **Pesh**
