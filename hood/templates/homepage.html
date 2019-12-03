@@ -15,9 +15,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body style="width:100%">
+<body style="width:100%" class="this">
 {% block content %}
 {{block.super}}
+
 <div class="container">
   <div class="col-xm-12 col-sm-12 col-md-12 col-lg-12">
 
@@ -37,7 +38,7 @@
 
       <p><b>Post Title:</b>{{post.title}}</p>
       <p><b>By:</b>{{post.owner}}</p>
-        <img src="{{post.post_image.url}}" class="img-responsive" alt="Image">
+        <img src="{{post.post_image.url}}" class="img-responsive" alt="Image" width="250" height="250" >
         <p>{{post.post}}</p>
 
         <a  data-toggle="modal" data-target="#settings" aria-hidden="true"style="color:black;" ><button type="button" class="btn btn-info" name="button"> Comment</button></a>
@@ -68,7 +69,7 @@
 
 
       <p><b>Name</b>{{business.business_name}}</p>
-        <img src="{{business.business_image.url}}" class="img-responsive" alt="Image">
+        <img src="{{business.business_image.url}}" class="img-responsive" alt="Image" width="300" height="300">
         <p><b>Neighbourhood</b>{{business.neighborhood}}</p>
 
       </div>
@@ -90,13 +91,15 @@
       <h1 style="color: blue; letter-spacing: 5px; padding: 10px;"class="text-center">Other Neighbourhoods</h1>
       {% for neighborhood in neighborhoods %}
 
+
+
       <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
 
 
 
       <p>{{neighborhood.title}}</p>
 
-        <img src="{{neighborhood.neighborhood_image.url}}" class="img-responsive" alt="Image">
+        <img src="{{neighborhood.neighborhood_image.url}}" class="img-responsive" alt="Image" width="300" height="300">
         <p>{{neighborhood.name}}</p>
         <a href="{% url 'neighborhood' neighborhood.id %}" class="btn btn-info" role="button">View more details</a>
 

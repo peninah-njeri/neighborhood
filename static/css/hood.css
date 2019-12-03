@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Carter+One|Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Calistoga|Carter+One|Merienda+One&display=swap');
+body{ 
+    background-image:linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url('https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,h2{
+    font-family: 'Carter One', cursive;
+}
+
+p{
+    font-family: 'Merienda One', cursive;
+    color: white;
+    font-size: 2rem;
+}
+.navbar{
+    font-family: 'Calistoga', cursive;
+    font-weight: bold;
+    background-color: bisque;
+
+}
